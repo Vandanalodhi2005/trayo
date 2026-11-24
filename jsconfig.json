@@ -3,5 +3,10 @@
     "paths": {
       "@/*": ["./*"]
     }
-  }
+  },
+  "plugins": [
+    {
+      "name": "@tailwindcss/postcss"
+    }
+  ]
 }
