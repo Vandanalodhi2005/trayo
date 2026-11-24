@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F5EBDD"/>
+  <circle cx="240" cy="270" r="115" fill="#FCF8F1" stroke="#C9A982" stroke-width="3"/>
+  <circle cx="240" cy="270" r="88" fill="#EFE3D2"/>
+  <circle cx="220" cy="252" r="18" fill="#FFFFFF"/>
+  <circle cx="260" cy="258" r="17" fill="#FFFFFF"/>
+  <circle cx="238" cy="288" r="18" fill="#FFFFFF"/>
+  <circle cx="495" cy="210" r="78" fill="#241C18"/>
+  <circle cx="495" cy="210" r="56" fill="#B94F24"/>
+  <circle cx="575" cy="370" r="72" fill="#FCF8F1" stroke="#66704E" stroke-width="3"/>
+  <circle cx="575" cy="370" r="50" fill="#66704E" fill-opacity="0.22"/>
+  <text x="400" y="510" text-anchor="middle" font-family="Georgia, serif" font-size="24" letter-spacing="6" fill="#241C18">HONEST PANTRY SPICES</text>
+  <text x="400" y="542" text-anchor="middle" font-family="sans-serif" font-size="13" letter-spacing="4" fill="#75685D">ROCK SALT · PEPPER · BOTANICALS</text>
+</svg>
