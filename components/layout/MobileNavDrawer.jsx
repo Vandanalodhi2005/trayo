@@ -3,13 +3,12 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Heart, ShoppingBag, User, X } from "lucide-react";
 import { BRAND, PRIMARY_NAV_LINKS } from "@/lib/constants";
 
 export default function MobileNavDrawer({ isOpen, onClose }) {
   const pathname = usePathname();
-  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -44,7 +43,7 @@ export default function MobileNavDrawer({ isOpen, onClose }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
+            transition={{ duration: 0.2 }}
             onClick={onClose}
             className="fixed inset-0 bg-brand-charcoal/50"
             aria-hidden="true"
@@ -52,12 +51,12 @@ export default function MobileNavDrawer({ isOpen, onClose }) {
 
           {/* Drawer Panel */}
           <motion.div
-            initial={shouldReduceMotion ? { x: 0 } : { x: "-100%" }}
+            initial={{ x: "-100%" }}
             animate={{ x: 0 }}
-            exit={shouldReduceMotion ? { x: 0 } : { x: "-100%" }}
+            exit={{ x: "-100%" }}
             transition={{
               type: "tween",
-              duration: shouldReduceMotion ? 0 : 0.25,
+              duration: 0.25,
               ease: "easeOut",
             }}
             className="relative flex h-full w-full max-w-xs flex-col bg-brand-cream text-brand-charcoal shadow-xl"

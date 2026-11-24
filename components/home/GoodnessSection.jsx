@@ -1,11 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { GOODNESS_PILLARS } from "@/lib/homeData";
 
 export default function GoodnessSection() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       aria-labelledby="goodness-heading"
@@ -32,12 +30,12 @@ export default function GoodnessSection() {
           {GOODNESS_PILLARS.map((item, index) => (
             <motion.div
               key={item.number}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{
                 duration: 0.45,
-                delay: shouldReduceMotion ? 0 : index * 0.08,
+                delay: index * 0.08,
                 ease: "easeOut",
               }}
               className="group bg-brand-light-cream p-7 transition-colors duration-300 hover:bg-brand-cream sm:p-8"

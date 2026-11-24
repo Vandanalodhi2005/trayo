@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { SHOWCASE_GALLERY } from "@/lib/homeData";
 
 const TONE_CLASSES = {
@@ -11,8 +11,6 @@ const TONE_CLASSES = {
 };
 
 export default function MakhanaShowcase() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       aria-labelledby="showcase-heading"
@@ -41,12 +39,12 @@ export default function MakhanaShowcase() {
           {SHOWCASE_GALLERY.map((item, index) => (
             <motion.figure
               key={item.id}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.55,
-                delay: shouldReduceMotion ? 0 : index * 0.1,
+                delay: index * 0.1,
                 ease: "easeOut",
               }}
               className={`group relative overflow-hidden rounded-sm border border-brand-border bg-brand-light-cream ${item.span}`}

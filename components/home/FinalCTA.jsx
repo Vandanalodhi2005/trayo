@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import WaterBubbles from "@/components/home/WaterBubbles";
 
 export default function FinalCTA() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       aria-labelledby="final-cta-heading"
@@ -16,7 +14,7 @@ export default function FinalCTA() {
       <WaterBubbles variant="cta" />
 
       <motion.div
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}

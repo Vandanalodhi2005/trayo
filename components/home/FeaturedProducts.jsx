@@ -3,12 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Heart } from "lucide-react";
 import { FEATURED_PRODUCTS } from "@/lib/homeData";
 
 export default function FeaturedProducts() {
-  const shouldReduceMotion = useReducedMotion();
   const [wishlistIds, setWishlistIds] = useState([]);
 
   const toggleWishlist = (id) => {
@@ -55,12 +54,12 @@ export default function FeaturedProducts() {
             return (
               <motion.article
                 key={product.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
                   duration: 0.5,
-                  delay: shouldReduceMotion ? 0 : index * 0.08,
+                  delay: index * 0.08,
                   ease: "easeOut",
                 }}
                 className="group flex flex-col border border-brand-border bg-brand-light-cream transition-colors duration-300 hover:border-brand-sand"
@@ -68,7 +67,7 @@ export default function FeaturedProducts() {
                 <div className="relative aspect-[4/4] w-full overflow-hidden bg-brand-cream">
                   <Link
                     href={`/product/${product.slug}`}
-                    className="block h-full w-full"
+                    className="relative block h-full w-full"
                     aria-label={`Discover ${product.name}`}
                   >
                     {product.image ? (

@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { DEMO_TESTIMONIALS } from "@/lib/homeData";
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const shouldReduceMotion = useReducedMotion();
 
   const current = DEMO_TESTIMONIALS[activeIndex];
 
@@ -49,9 +48,9 @@ export default function Testimonials() {
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={current.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="max-w-2xl"
               >

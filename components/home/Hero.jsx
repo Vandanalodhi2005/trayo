@@ -2,16 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import WaterBubbles from "@/components/home/WaterBubbles";
 
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-
-  const textInitial = shouldReduceMotion ? false : { opacity: 0, y: 20 };
-  const textAnimate = { opacity: 1, y: 0 };
-
   return (
     <section
       aria-labelledby="hero-heading"
@@ -29,8 +24,8 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-20">
         {/* Editorial Copy Column */}
         <motion.div
-          initial={textInitial}
-          animate={textAnimate}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
           className="lg:col-span-6"
         >
@@ -96,7 +91,7 @@ export default function Hero() {
 
         {/* Hero Food Photography Column */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
           className="relative lg:col-span-6"

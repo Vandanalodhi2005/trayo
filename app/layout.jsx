@@ -3,6 +3,7 @@ import "./globals.css";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MotionProvider from "@/components/providers/MotionProvider";
 import { BRAND } from "@/lib/constants";
 
 const playfairDisplay = Playfair_Display({
@@ -40,12 +41,14 @@ export default function RootLayout({ children }) {
         >
           Skip to main content
         </a>
-        <AnnouncementBar />
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <MotionProvider>
+          <AnnouncementBar />
+          <Header />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

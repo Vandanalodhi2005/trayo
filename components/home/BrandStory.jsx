@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export default function BrandStory() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       aria-labelledby="story-heading"
@@ -16,7 +14,7 @@ export default function BrandStory() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
         {/* Lifestyle Image Column */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -37,7 +35,7 @@ export default function BrandStory() {
 
         {/* Editorial Copy Column */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
