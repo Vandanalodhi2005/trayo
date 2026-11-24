@@ -1,4 +1,4 @@
-import { DM_Sans, Playfair_Display } from "next/font/google";
+// Font imports disabled for offline build
 import "./globals.css";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
@@ -6,19 +6,8 @@ import Footer from "@/components/layout/Footer";
 import MotionProvider from "@/components/providers/MotionProvider";
 import { BRAND } from "@/lib/constants";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+const playfairDisplay = { variable: "" };
+const dmSans = { variable: "" };
 
 export const metadata = {
   title: {
